@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/tags/blog/</loc>
+    <loc>https://wentuto.github.io/tags/blog/</loc>
     <lastmod>2023-10-06T14:49:03+08:00</lastmod>
   </url><url>
-    <loc>https://example.org/categories/blog/</loc>
+    <loc>https://wentuto.github.io/categories/blog/</loc>
     <lastmod>2023-10-06T14:49:03+08:00</lastmod>
   </url><url>
-    <loc>https://example.org/blog/</loc>
+    <loc>https://wentuto.github.io/blog/</loc>
     <lastmod>2023-10-06T14:49:03+08:00</lastmod>
   </url><url>
-    <loc>https://example.org/categories/</loc>
+    <loc>https://wentuto.github.io/categories/</loc>
     <lastmod>2023-10-06T14:49:03+08:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/</loc>
+    <loc>https://wentuto.github.io/tags/</loc>
     <lastmod>2023-10-06T14:49:03+08:00</lastmod>
   </url><url>
-    <loc>https://example.org/</loc>
+    <loc>https://wentuto.github.io/</loc>
     <lastmod>2023-10-06T14:49:03+08:00</lastmod>
   </url><url>
-    <loc>https://example.org/blog/build_my_own_blog_2023/</loc>
+    <loc>https://wentuto.github.io/blog/build_my_own_blog_2023/</loc>
     <lastmod>2023-10-06T14:49:03+08:00</lastmod>
   </url><url>
-    <loc>https://example.org/archives/</loc>
+    <loc>https://wentuto.github.io/archives/</loc>
   </url>
 </urlset>
