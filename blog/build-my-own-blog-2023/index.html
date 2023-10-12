@@ -16,7 +16,7 @@
     
   },
   "name":"Things always happen gradually",
-  "description":"\n前言 之前已經使用過 GHOST 打造我自己的BLOG，它是一套非常好用的 open source blog，功能也相當強大，有很好用的編輯介面與擴充功能，但也因功能強大，遇到的問題要克服也比較複雜，我在更新 HTTPS 的 SSL 時一直卡關後，原先的 BLOG 就沒有在更新了，再來也是因為要自己 host 網站，會有一筆 host 的費用，當看到可以用 GITHUB PAGES 的方案就想要換這個免費的方式。\n評估 後來決定使用 HUGO＋GITHUB PAGES，主要就是『快』跟『簡單』：因為 HUGO 是目前調查的靜態網頁系統中生成速度最快的，可以節省不少時間，所以『快』，再來就是因為相依的模組較少，可避免安裝或升級時引起的問題，所以『簡單』。至於為何不使用以前使用過的 GHOST，主要是雖然 GHOST 功能較強大，但管理邏輯上比較複雜，比較不知從何改起，怕升級失敗後，之前的心血就白費了。最後就是可以省下一筆自己 HOST 網站的費用，想說等之後真的越寫越多，再搬到GHOST也不是不可以 XD。\n安裝 首先是在電腦上安裝 HUGO 這個用 Go 編寫的靜態網站生成器，由於我用的電腦是 MACBOOK，所以使用下面 command\nbrew install hugo\n這樣就可以安裝完成了。\n使用 HUGO 建立新 BLOG ",
+  "description":"前言（為何使用 GITHUB PAGES) 之前已經使用過 GHOST 寫自己的BLOG，它是一套非常好用的 open source blog，功能相當強大，有很好用的編輯介面與擴充功能，但也因功能強大，管理邏輯上較複雜，遇到問題要克服也較麻煩，常擔心升級失敗後，之前的心血就白費了。我自己則是在更新 HTTPS 的 SSL (Let’s Encrypt)遇到問題後，就沒有再繼續更新自己舊的 GHOST BLOG。另一個原因是使用 GHOST 會有一筆 hosting 的費用（自己 host 網站或者是購買 GHOST 的 services），當知道可以用 GITHUB PAGES 來 publish 自己的靜態網頁，就想要試試看這個免費的方式。\n評估（決定使用 HUGO 當靜態網頁生成器） 若要使用 GITHUB PAGES publish 網頁，需要先決定靜態網頁生成器的方案，它的作用是將你寫的 markdown 文章轉成網頁，你就可以將轉好的文章網頁上傳到 GITHUB PAGES 上去發表。靜態網頁生成器的方案有像 jekyll, hexo, and hugo。 比較後決定使用 HUGO，主要是『快』：因為 HUGO 是目前調查的靜態網頁系統中生成速度最快的，可以節省不少生成的時間。而 HUGO \u002b GITHUB PAGES 這樣的方式比起之前 GHOST 的方案來說相依的模組較少，執行起來相對『簡單』很多，想說等之後真的越寫越多，再搬到 GHOST 也不是不可以 XD。\n安裝 首先是在電腦上安裝 HUGO 這個用 Go 編寫的靜態網站生成器，由於我用的電腦是 MACBOOK，所以使用下面 command",
   "url":"https:\/\/wentuto.github.io\/blog\/build-my-own-blog-2023\/",
   "keywords":"[]"
 }
@@ -28,42 +28,26 @@
 <meta name="generator" content="Hugo 0.119.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yoda@Taipei">
 <meta name="keywords" content="">
-<meta name="description" content="
-前言 之前已經使用過 GHOST 打造我自己的BLOG，它是一套非常好用的 open source blog，功能也相當強大，有很好用的編輯介面與擴充功能，但也因功能強大，遇到的問題要克服也比較複雜，我在更新 HTTPS 的 SSL 時一直卡關後，原先的 BLOG 就沒有在更新了，再來也是因為要自己 host 網站，會有一筆 host 的費用，當看到可以用 GITHUB PAGES 的方案就想要換這個免費的方式。
-評估 後來決定使用 HUGO＋GITHUB PAGES，主要就是『快』跟『簡單』：因為 HUGO 是目前調查的靜態網頁系統中生成速度最快的，可以節省不少時間，所以『快』，再來就是因為相依的模組較少，可避免安裝或升級時引起的問題，所以『簡單』。至於為何不使用以前使用過的 GHOST，主要是雖然 GHOST 功能較強大，但管理邏輯上比較複雜，比較不知從何改起，怕升級失敗後，之前的心血就白費了。最後就是可以省下一筆自己 HOST 網站的費用，想說等之後真的越寫越多，再搬到GHOST也不是不可以 XD。
-安裝 首先是在電腦上安裝 HUGO 這個用 Go 編寫的靜態網站生成器，由於我用的電腦是 MACBOOK，所以使用下面 command
-brew install hugo
-這樣就可以安裝完成了。
-使用 HUGO 建立新 BLOG ">
+<meta name="description" content="前言（為何使用 GITHUB PAGES) 之前已經使用過 GHOST 寫自己的BLOG，它是一套非常好用的 open source blog，功能相當強大，有很好用的編輯介面與擴充功能，但也因功能強大，管理邏輯上較複雜，遇到問題要克服也較麻煩，常擔心升級失敗後，之前的心血就白費了。我自己則是在更新 HTTPS 的 SSL (Let’s Encrypt)遇到問題後，就沒有再繼續更新自己舊的 GHOST BLOG。另一個原因是使用 GHOST 會有一筆 hosting 的費用（自己 host 網站或者是購買 GHOST 的 services），當知道可以用 GITHUB PAGES 來 publish 自己的靜態網頁，就想要試試看這個免費的方式。
+評估（決定使用 HUGO 當靜態網頁生成器） 若要使用 GITHUB PAGES publish 網頁，需要先決定靜態網頁生成器的方案，它的作用是將你寫的 markdown 文章轉成網頁，你就可以將轉好的文章網頁上傳到 GITHUB PAGES 上去發表。靜態網頁生成器的方案有像 jekyll, hexo, and hugo。 比較後決定使用 HUGO，主要是『快』：因為 HUGO 是目前調查的靜態網頁系統中生成速度最快的，可以節省不少生成的時間。而 HUGO &#43; GITHUB PAGES 這樣的方式比起之前 GHOST 的方案來說相依的模組較少，執行起來相對『簡單』很多，想說等之後真的越寫越多，再搬到 GHOST 也不是不可以 XD。
+安裝 首先是在電腦上安裝 HUGO 這個用 Go 編寫的靜態網站生成器，由於我用的電腦是 MACBOOK，所以使用下面 command">
 
 
-<meta property="og:description" content="
-前言 之前已經使用過 GHOST 打造我自己的BLOG，它是一套非常好用的 open source blog，功能也相當強大，有很好用的編輯介面與擴充功能，但也因功能強大，遇到的問題要克服也比較複雜，我在更新 HTTPS 的 SSL 時一直卡關後，原先的 BLOG 就沒有在更新了，再來也是因為要自己 host 網站，會有一筆 host 的費用，當看到可以用 GITHUB PAGES 的方案就想要換這個免費的方式。
-評估 後來決定使用 HUGO＋GITHUB PAGES，主要就是『快』跟『簡單』：因為 HUGO 是目前調查的靜態網頁系統中生成速度最快的，可以節省不少時間，所以『快』，再來就是因為相依的模組較少，可避免安裝或升級時引起的問題，所以『簡單』。至於為何不使用以前使用過的 GHOST，主要是雖然 GHOST 功能較強大，但管理邏輯上比較複雜，比較不知從何改起，怕升級失敗後，之前的心血就白費了。最後就是可以省下一筆自己 HOST 網站的費用，想說等之後真的越寫越多，再搬到GHOST也不是不可以 XD。
-安裝 首先是在電腦上安裝 HUGO 這個用 Go 編寫的靜態網站生成器，由於我用的電腦是 MACBOOK，所以使用下面 command
-brew install hugo
-這樣就可以安裝完成了。
-使用 HUGO 建立新 BLOG ">
+<meta property="og:description" content="前言（為何使用 GITHUB PAGES) 之前已經使用過 GHOST 寫自己的BLOG，它是一套非常好用的 open source blog，功能相當強大，有很好用的編輯介面與擴充功能，但也因功能強大，管理邏輯上較複雜，遇到問題要克服也較麻煩，常擔心升級失敗後，之前的心血就白費了。我自己則是在更新 HTTPS 的 SSL (Let’s Encrypt)遇到問題後，就沒有再繼續更新自己舊的 GHOST BLOG。另一個原因是使用 GHOST 會有一筆 hosting 的費用（自己 host 網站或者是購買 GHOST 的 services），當知道可以用 GITHUB PAGES 來 publish 自己的靜態網頁，就想要試試看這個免費的方式。
+評估（決定使用 HUGO 當靜態網頁生成器） 若要使用 GITHUB PAGES publish 網頁，需要先決定靜態網頁生成器的方案，它的作用是將你寫的 markdown 文章轉成網頁，你就可以將轉好的文章網頁上傳到 GITHUB PAGES 上去發表。靜態網頁生成器的方案有像 jekyll, hexo, and hugo。 比較後決定使用 HUGO，主要是『快』：因為 HUGO 是目前調查的靜態網頁系統中生成速度最快的，可以節省不少生成的時間。而 HUGO &#43; GITHUB PAGES 這樣的方式比起之前 GHOST 的方案來說相依的模組較少，執行起來相對『簡單』很多，想說等之後真的越寫越多，再搬到 GHOST 也不是不可以 XD。
+安裝 首先是在電腦上安裝 HUGO 這個用 Go 編寫的靜態網站生成器，由於我用的電腦是 MACBOOK，所以使用下面 command">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG">
 <meta name="twitter:title" content="用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG">
 <meta property="og:url" content="https://wentuto.github.io/blog/build-my-own-blog-2023/">
 <meta property="twitter:url" content="https://wentuto.github.io/blog/build-my-own-blog-2023/">
 <meta property="og:site_name" content="Things always happen gradually">
-<meta property="og:description" content="
-前言 之前已經使用過 GHOST 打造我自己的BLOG，它是一套非常好用的 open source blog，功能也相當強大，有很好用的編輯介面與擴充功能，但也因功能強大，遇到的問題要克服也比較複雜，我在更新 HTTPS 的 SSL 時一直卡關後，原先的 BLOG 就沒有在更新了，再來也是因為要自己 host 網站，會有一筆 host 的費用，當看到可以用 GITHUB PAGES 的方案就想要換這個免費的方式。
-評估 後來決定使用 HUGO＋GITHUB PAGES，主要就是『快』跟『簡單』：因為 HUGO 是目前調查的靜態網頁系統中生成速度最快的，可以節省不少時間，所以『快』，再來就是因為相依的模組較少，可避免安裝或升級時引起的問題，所以『簡單』。至於為何不使用以前使用過的 GHOST，主要是雖然 GHOST 功能較強大，但管理邏輯上比較複雜，比較不知從何改起，怕升級失敗後，之前的心血就白費了。最後就是可以省下一筆自己 HOST 網站的費用，想說等之後真的越寫越多，再搬到GHOST也不是不可以 XD。
-安裝 首先是在電腦上安裝 HUGO 這個用 Go 編寫的靜態網站生成器，由於我用的電腦是 MACBOOK，所以使用下面 command
-brew install hugo
-這樣就可以安裝完成了。
-使用 HUGO 建立新 BLOG ">
-<meta name="twitter:description" content="
-前言 之前已經使用過 GHOST 打造我自己的BLOG，它是一套非常好用的 open source blog，功能也相當強大，有很好用的編輯介面與擴充功能，但也因功能強大，遇到的問題要克服也比較複雜，我在更新 HTTPS 的 SSL 時一直卡關後，原先的 BLOG 就沒有在更新了，再來也是因為要自己 host 網站，會有一筆 host 的費用，當看到可以用 GITHUB PAGES 的方案就想要換這個免費的方式。
-評估 後來決定使用 HUGO＋GITHUB PAGES，主要就是『快』跟『簡單』：因為 HUGO 是目前調查的靜態網頁系統中生成速度最快的，可以節省不少時間，所以『快』，再來就是因為相依的模組較少，可避免安裝或升級時引起的問題，所以『簡單』。至於為何不使用以前使用過的 GHOST，主要是雖然 GHOST 功能較強大，但管理邏輯上比較複雜，比較不知從何改起，怕升級失敗後，之前的心血就白費了。最後就是可以省下一筆自己 HOST 網站的費用，想說等之後真的越寫越多，再搬到GHOST也不是不可以 XD。
-安裝 首先是在電腦上安裝 HUGO 這個用 Go 編寫的靜態網站生成器，由於我用的電腦是 MACBOOK，所以使用下面 command
-brew install hugo
-這樣就可以安裝完成了。
-使用 HUGO 建立新 BLOG ">
+<meta property="og:description" content="前言（為何使用 GITHUB PAGES) 之前已經使用過 GHOST 寫自己的BLOG，它是一套非常好用的 open source blog，功能相當強大，有很好用的編輯介面與擴充功能，但也因功能強大，管理邏輯上較複雜，遇到問題要克服也較麻煩，常擔心升級失敗後，之前的心血就白費了。我自己則是在更新 HTTPS 的 SSL (Let’s Encrypt)遇到問題後，就沒有再繼續更新自己舊的 GHOST BLOG。另一個原因是使用 GHOST 會有一筆 hosting 的費用（自己 host 網站或者是購買 GHOST 的 services），當知道可以用 GITHUB PAGES 來 publish 自己的靜態網頁，就想要試試看這個免費的方式。
+評估（決定使用 HUGO 當靜態網頁生成器） 若要使用 GITHUB PAGES publish 網頁，需要先決定靜態網頁生成器的方案，它的作用是將你寫的 markdown 文章轉成網頁，你就可以將轉好的文章網頁上傳到 GITHUB PAGES 上去發表。靜態網頁生成器的方案有像 jekyll, hexo, and hugo。 比較後決定使用 HUGO，主要是『快』：因為 HUGO 是目前調查的靜態網頁系統中生成速度最快的，可以節省不少生成的時間。而 HUGO &#43; GITHUB PAGES 這樣的方式比起之前 GHOST 的方案來說相依的模組較少，執行起來相對『簡單』很多，想說等之後真的越寫越多，再搬到 GHOST 也不是不可以 XD。
+安裝 首先是在電腦上安裝 HUGO 這個用 Go 編寫的靜態網站生成器，由於我用的電腦是 MACBOOK，所以使用下面 command">
+<meta name="twitter:description" content="前言（為何使用 GITHUB PAGES) 之前已經使用過 GHOST 寫自己的BLOG，它是一套非常好用的 open source blog，功能相當強大，有很好用的編輯介面與擴充功能，但也因功能強大，管理邏輯上較複雜，遇到問題要克服也較麻煩，常擔心升級失敗後，之前的心血就白費了。我自己則是在更新 HTTPS 的 SSL (Let’s Encrypt)遇到問題後，就沒有再繼續更新自己舊的 GHOST BLOG。另一個原因是使用 GHOST 會有一筆 hosting 的費用（自己 host 網站或者是購買 GHOST 的 services），當知道可以用 GITHUB PAGES 來 publish 自己的靜態網頁，就想要試試看這個免費的方式。
+評估（決定使用 HUGO 當靜態網頁生成器） 若要使用 GITHUB PAGES publish 網頁，需要先決定靜態網頁生成器的方案，它的作用是將你寫的 markdown 文章轉成網頁，你就可以將轉好的文章網頁上傳到 GITHUB PAGES 上去發表。靜態網頁生成器的方案有像 jekyll, hexo, and hugo。 比較後決定使用 HUGO，主要是『快』：因為 HUGO 是目前調查的靜態網頁系統中生成速度最快的，可以節省不少生成的時間。而 HUGO &#43; GITHUB PAGES 這樣的方式比起之前 GHOST 的方案來說相依的模組較少，執行起來相對『簡單』很多，想說等之後真的越寫越多，再搬到 GHOST 也不是不可以 XD。
+安裝 首先是在電腦上安裝 HUGO 這個用 Go 編寫的靜態網站生成器，由於我用的電腦是 MACBOOK，所以使用下面 command">
 <meta property="og:locale" content="en-us">
 
   
@@ -269,15 +253,211 @@ brew install hugo
           <div class="post-content markdown">
             <div class="main-content-wrap">
               <p><img src="images/do-something-great.jpg" alt="Image alt"></p>
-<h1 id="前言">前言</h1>
-<p>之前已經使用過 GHOST 打造我自己的BLOG，它是一套非常好用的 open source blog，功能也相當強大，有很好用的編輯介面與擴充功能，但也因功能強大，遇到的問題要克服也比較複雜，我在更新 HTTPS 的 SSL 時一直卡關後，原先的 BLOG 就沒有在更新了，再來也是因為要自己 host 網站，會有一筆 host 的費用，當看到可以用 GITHUB PAGES 的方案就想要換這個免費的方式。</p>
-<h1 id="評估">評估</h1>
-<p>後來決定使用 HUGO＋GITHUB PAGES，主要就是『快』跟『簡單』：因為 HUGO 是目前調查的靜態網頁系統中生成速度最快的，可以節省不少時間，所以『快』，再來就是因為相依的模組較少，可避免安裝或升級時引起的問題，所以『簡單』。至於為何不使用以前使用過的 GHOST，主要是雖然 GHOST 功能較強大，但管理邏輯上比較複雜，比較不知從何改起，怕升級失敗後，之前的心血就白費了。最後就是可以省下一筆自己 HOST 網站的費用，想說等之後真的越寫越多，再搬到GHOST也不是不可以 XD。</p>
+<h1 id="前言為何使用-github-pages">前言（為何使用 GITHUB PAGES)</h1>
+<p>之前已經使用過 GHOST 寫自己的BLOG，它是一套非常好用的 open source blog，功能相當強大，有很好用的編輯介面與擴充功能，但也因功能強大，管理邏輯上較複雜，遇到問題要克服也較麻煩，常擔心升級失敗後，之前的心血就白費了。我自己則是在更新 HTTPS 的 SSL (Let’s Encrypt)遇到問題後，就沒有再繼續更新自己舊的 GHOST BLOG。另一個原因是使用 GHOST 會有一筆 hosting 的費用（自己 host 網站或者是購買 GHOST 的 services），當知道可以用 GITHUB PAGES 來 publish 自己的靜態網頁，就想要試試看這個免費的方式。</p>
+<h1 id="評估決定使用-hugo-當靜態網頁生成器">評估（決定使用 HUGO 當靜態網頁生成器）</h1>
+<p>若要使用 <strong>GITHUB PAGES</strong> publish 網頁，需要先決定靜態網頁生成器的方案，它的作用是將你寫的 markdown 文章轉成網頁，你就可以將轉好的文章網頁上傳到 GITHUB PAGES 上去發表。靜態網頁生成器的方案有像 jekyll, hexo, and hugo。 比較後決定使用 HUGO，主要是『快』：因為 HUGO 是目前調查的靜態網頁系統中生成速度最快的，可以節省不少生成的時間。而 <strong>HUGO + GITHUB PAGES</strong> 這樣的方式比起之前 GHOST 的方案來說相依的模組較少，執行起來相對『簡單』很多，想說等之後真的越寫越多，再搬到 GHOST 也不是不可以 XD。</p>
 <h1 id="安裝">安裝</h1>
 <p>首先是在電腦上安裝 HUGO 這個用 Go 編寫的靜態網站生成器，由於我用的電腦是 MACBOOK，所以使用下面 command</p>
-<p>brew install hugo</p>
-<p>這樣就可以安裝完成了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>brew install hugo
+</span></span></code></pre></div><p>這樣就可以安裝完成了。</p>
 <h1 id="使用-hugo-建立新-blog">使用 HUGO 建立新 BLOG</h1>
+<p>至於怎麼使用 HUGO，我端參考這個 <a href="https://ithelp.ithome.com.tw/users/20106430/ironman/3613" title="Hugo 貼身打造個人部落格">Hugo 貼身打造個人部落格</a> 來入門，以及參考網路上的其他文章，一步步地寫 MARKDOWN，並找到方法加入 theme、圖片、程式碼、上傳 GITHUB&hellip;，這裡只列出如何用 HUGO 寫文章的基本方式，其他的有機會在慢慢來寫 XD！</p>
+<h1 id="hugo-基本指令">HUGO 基本指令</h1>
+<p>一開始安裝完後可以使用</p>
+<pre tabindex="0"><code>hugo version
+</code></pre><p>來確認安裝是否成功以己安裝版本為何。</p>
+<p>如果要建立一個新的 site，可以使用</p>
+<pre tabindex="0"><code>hugo new site blog_site_name
+</code></pre><p>例如我輸入</p>
+
+  
+  
+  
+  
+
+
+<figure class="highlight shell language-shell">
+  <figcaption>
+    
+      <span>Shell</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-shell shell"><code class="shell">$ hugo new site myblog
+
+Congratulations! Your new Hugo site was created in myblog.
+
+Just a few more steps...
+
+1. Change the current directory to myblog.
+2. Create or install a theme:
+   - Create a new theme with the command &#34;hugo new theme &lt;THEMENAME&gt;&#34;
+   - Install a theme from https://themes.gohugo.io/
+3. Edit hugo.toml, setting the &#34;theme&#34; property to the theme name.
+4. Create new content with the command &#34;hugo new content &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&#34;.
+5. Start the embedded web server with the command &#34;hugo server --buildDrafts&#34;.
+
+See documentation at https://gohugo.io/.</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<p>hugo 會幫你建立一個 local 端的 folder，名稱為 myblog。並告訴你要安裝主題 theme 以及去設定 folder 裡面的 config 檔 hugo.toml。接下來我們繼續執行：</p>
+
+  
+  
+  
+  
+
+
+<figure class="highlight shell language-shell">
+  <figcaption>
+    
+      <span>Shell</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-shell shell"><code class="shell">cd myblog
+git init
+git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+echo &#34;theme = &#39;ananke&#39;&#34; &gt;&gt; hugo.toml
+hugo server</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<p>console 的 output 顯示我可以在 http://localhost:1313/ 看到我的網站，打開 browser 輸入好網址，便可以看到一個 local 端已經建立好的網站：</p>
+
+ 
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure center" >
+  
+    <a class="fancybox" href="images/new-site.jpg" title="新建立好的網站截圖" data-fancybox="">
+  
+    <img class="fig-img" src="images/new-site.jpg"  alt="新建立好的網站截圖">
+  
+    </a>
+  
+   
+    <span class="caption">新建立好的網站截圖</span>
+  
+</div>
+
+  <div style="clear:both;"></div>
+
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>這個看到的部落格，很多地方都是顯示 default 的設定，我們可以透過修改設定檔，讓 blog 顯示你要的內容，這邊就需要去修改目錄底下的 hugo.toml 設定檔，上面那一串輸入的指令有 <code>echo &quot;theme = 'ananke'&quot; &gt;&gt; hugo.toml</code> 其實就是加了 theme 設定，指定為 ananke theme。</p>
+<h1 id="加入一篇文章">加入一篇文章</h1>
+<p>接下來我們先試著新增一篇文章，這樣才算一個完整的 blog，輸入以下命令：</p>
+<pre tabindex="0"><code>$ hugo new posts/first-post-example.md
+Content &#34;myblog/content/posts/first-post-example.md&#34; created
+</code></pre><p>這樣會在主目錄下的 <code>content/posts</code> 目錄裡新增檔案名稱為 <code>first-post-example.md</code> 的文章。而且打開文章一看，hugo 已經幫你生成了部分文章內容，有文章 title，編輯時間，以及是不是還在草稿階段，如下：</p>
+<pre tabindex="0"><code>+++
+title = &#39;First Post Example&#39;
+date = 2023-10-12T11:07:57+08:00
+draft = true
++++
+</code></pre><p>接下來你就可以用 markdown 語法寫文章，至於要如何用 markdown 寫文章，網路應該很容易 google 的到，所以就不特別描述了。將剛才的內容改成如下：</p>
+<pre tabindex="0"><code>+++
+title = &#39;First Post Example&#39;
+date = 2023-10-12T11:07:57+08:00
+draft = true
++++
+
+# 第一篇文章
+
+多多嘗試**MARKDOWN**語法，就能夠很輕鬆地寫BLOG
+</code></pre><p>然後回到主目錄 <code>myblog</code> 下，輸入<code>hugo server -D</code> ，加 <code>-D</code> 的目的是為了顯示 draft 的文章，這樣就可以在 local 端看到你的文章，截圖如下：</p>
+
+ 
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure center" >
+  
+    <a class="fancybox" href="images/new-post.jpg" title="新建立好的文章截圖" data-fancybox="">
+  
+    <img class="fig-img" src="images/new-post.jpg"  alt="新建立好的文章截圖">
+  
+    </a>
+  
+   
+    <span class="caption">新建立好的文章截圖</span>
+  
+</div>
+
+  <div style="clear:both;"></div>
+
+<h1 id="接下來需要做的事">接下來需要做的事</h1>
+<p>所以到目前為止，我們已經在 local 端開始寫起 BLOG，接下來會遇到一些像 config (hugo.toml) 如何設定，如何上傳 github pages，如何選一個自己喜歡的 theme，很多你都可以在 <a href="https://ithelp.ithome.com.tw/users/20106430/ironman/3613" title="Hugo 貼身打造個人部落格">Hugo 貼身打造個人部落格</a> 這一系列的文章找到解法，之後有空我也會寫一些自己用 github pages + hugo 寫 blog 碰到的問題及解決方法，但就以盡量避免重複為原則，畢竟不需要『重複造輪』囉！</p>
 
               
 
