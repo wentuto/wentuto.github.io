@@ -17,7 +17,7 @@
   },
   "name":"Things always happen gradually",
   "description":"Hugo tranquilpeak theme demo",
-  "url":"https:\/\/wentuto.github.io\/archives\/",
+  "url":"https:\/\/wentuto.github.io\/tags\/ai-paper\/",
   "keywords":"[]"
 }
 
@@ -33,10 +33,10 @@
 
 <meta property="og:description" content="Hugo tranquilpeak theme demo">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Archives">
-<meta name="twitter:title" content="Archives">
-<meta property="og:url" content="https://wentuto.github.io/archives/">
-<meta property="twitter:url" content="https://wentuto.github.io/archives/">
+<meta property="og:title" content="AI PAPER">
+<meta name="twitter:title" content="AI PAPER">
+<meta property="og:url" content="https://wentuto.github.io/tags/ai-paper/">
+<meta property="twitter:url" content="https://wentuto.github.io/tags/ai-paper/">
 <meta property="og:site_name" content="Things always happen gradually">
 <meta property="og:description" content="Hugo tranquilpeak theme demo">
 <meta name="twitter:description" content="Hugo tranquilpeak theme demo">
@@ -59,16 +59,16 @@
 
 
 
-    <title>Archives</title>
+    <title>AI PAPER</title>
 
     <link rel="icon" href="https://wentuto.github.io/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://wentuto.github.io/archives/index.xml">
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://wentuto.github.io/tags/ai-paper/index.xml">
     
 
     
 
-    <link rel="canonical" href="https://wentuto.github.io/archives/">
+    <link rel="canonical" href="https://wentuto.github.io/tags/ai-paper/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -186,38 +186,92 @@
   </div>
 </nav>
 
+      
+        
+
+      
       <div id="main" data-behavior="1"
         class="
                hasCoverMetaIn
                ">
-        <div id="archives" class="main-content-wrap">
-          <form id="filter-form" action="#">
-            <input name="date" type="text" class="form-control input--xlarge" placeholder="Search date (YYYY/MM/DD)" autofocus="autofocus">
-          </form>
-          <h5 class="archive-result text-color-base text-xlarge" data-message-zero="no post found" data-message-one="1 post found" data-message-other="{n} posts found"></h5>
-<section class="boxes">
+        
+          <section class="postShorten-group main-content-wrap">
+            
+            
+              
   
     
-    <div class="archive archive-year box" data-date="2023">
-      <h4 class="archive-title" style="text-decoration: none;">2023</h4>
-      
-        <ul class="archive-posts archive-month" data-date="202312">
-          <h5 class="archive-title" style="text-decoration: none;">December</h5>
-          
-            <li class="archive-post archive-day" data-date="20231212">
-              <a class="archive-post-title" href="https://wentuto.github.io/attention-is-all-you-need/">Attention Is All You Need</a>
-            </li>
-          
-            <li class="archive-post archive-day" data-date="20231206">
-              <a class="archive-post-title" href="https://wentuto.github.io/build-my-won-blog-with-github-pages-and-hugo/">用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG</a>
-            </li>
-          
-        </ul>
-      
-    </div>
   
-</section>
-        </div>
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-left">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="https://wentuto.github.io/attention-is-all-you-need/" aria-label="Open the post: Attention Is All You Need">
+      
+          Attention Is All You Need
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2023-12-12T15:40:42&#43;08:00">
+        
+  December 12, 2023
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://wentuto.github.io/categories/ai-paper">AI PAPER</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        Attention is all you need 是一篇 Google 在 2017 年提出的論文，主要提出了名為 transformer 的 model。在這個 model 中，使用了 attention layer，提供了 NLP 模型平行處理機制，解決 Recurrent Models 以 batch 訓練時所遇到的記憶體限制問題。也讓 NLP model 有機會考量到當句子很長時，距離不同長度的資訊，這篇論文言簡意賅，重點都有提到，也提供了詳盡的 reference，再加上網路上已經有很多參考的影片和文章，甚至有程式碼可供練習，是一篇值得細細品味的論文，也是一個進入 NLP 很好的切入點。
+Transformer 整篇論文，可以用這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：
+我們可以看出 Encoder 的 output 會輸入到 Decoder，而 Decoder 會依序 output 出一個個 token，就像 Sequence to Sequence models 一樣，而進入 Decoder 後，information 會流向Decoder 的每一層 Sub-layers，而不是 Output 到 Decoder 的第一層而已。
+      
+      <p>
+        
+          <a href="https://wentuto.github.io/attention-is-all-you-need/" class="postShorten-excerpt_link link" aria-label="Open the post: Attention Is All You Need">Continue reading</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+    <a href="https://wentuto.github.io/attention-is-all-you-need/" aria-label="Open the post: Attention Is All You Need">
+      <div class="postShorten-thumbnailimg">
+        <img alt="" src="https://wentuto.github.io/images/attention.png"/>
+      </div>
+    </a>
+  
+</article>
+
+            
+            
+
+          </section>
+        
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 Yoda@Taipei. All Rights Reserved
+  </span>
+</footer>
+
       </div>
     </div>
     

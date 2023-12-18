@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Attention Is All You Need",
+  
+  "image": "https://wentuto.github.io/images/attention.png",
+  
+  "datePublished": "2023-12-12T15:40:42+08:00",
+  "dateModified": "2023-12-12T15:40:42+08:00",
+  "author": {
+    "@type": "Person",
+    "name": "Yoda@Taipei",
+    
+    "image": "https://wentuto.github.io/images/yoda.jpeg"
+    
+  },
+  "mainEntityOfPage": { 
+    "@type": "WebPage",
+    "@id": "https:\/\/wentuto.github.io\/attention-is-all-you-need\/" 
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Things always happen gradually",
+    
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://wentuto.github.io/images/yoda.jpeg"
+    }
+    
+  },
+  "description": "Attention is all you need 是一篇 Google 在 2017 年提出的論文，主要提出了名為 transformer 的 model。在這個 model 中，使用了 attention layer，提供了 NLP 模型平行處理機制，解決 Recurrent Models 以 batch 訓練時所遇到的記憶體限制問題。也讓 NLP model 有機會考量到當句子很長時，距離不同長度的資訊，這篇論文言簡意賅，重點都有提到，也提供了詳盡的 reference，再加上網路上已經有很多參考的影片和文章，甚至有程式碼可供練習，是一篇值得細細品味的論文，也是一個進入 NLP 很好的切入點。\nTransformer 整篇論文，可以用這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：\n我們可以看出 Encoder 的 output 會輸入到 Decoder，而 Decoder 會依序 output 出一個個 token，就像 Sequence to Sequence models 一樣，而進入 Decoder 後，information 會流向Decoder 的每一層 Sub-layers，而不是 Output 到 Decoder 的第一層而已。",
+  "keywords": []
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.119.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Yoda@Taipei">
+<meta name="keywords" content="">
+<meta name="description" content="Attention is all you need 是一篇 Google 在 2017 年提出的論文，主要提出了名為 transformer 的 model。在這個 model 中，使用了 attention layer，提供了 NLP 模型平行處理機制，解決 Recurrent Models 以 batch 訓練時所遇到的記憶體限制問題。也讓 NLP model 有機會考量到當句子很長時，距離不同長度的資訊，這篇論文言簡意賅，重點都有提到，也提供了詳盡的 reference，再加上網路上已經有很多參考的影片和文章，甚至有程式碼可供練習，是一篇值得細細品味的論文，也是一個進入 NLP 很好的切入點。
+Transformer 整篇論文，可以用這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：
+我們可以看出 Encoder 的 output 會輸入到 Decoder，而 Decoder 會依序 output 出一個個 token，就像 Sequence to Sequence models 一樣，而進入 Decoder 後，information 會流向Decoder 的每一層 Sub-layers，而不是 Output 到 Decoder 的第一層而已。">
+
+
+<meta property="og:description" content="Attention is all you need 是一篇 Google 在 2017 年提出的論文，主要提出了名為 transformer 的 model。在這個 model 中，使用了 attention layer，提供了 NLP 模型平行處理機制，解決 Recurrent Models 以 batch 訓練時所遇到的記憶體限制問題。也讓 NLP model 有機會考量到當句子很長時，距離不同長度的資訊，這篇論文言簡意賅，重點都有提到，也提供了詳盡的 reference，再加上網路上已經有很多參考的影片和文章，甚至有程式碼可供練習，是一篇值得細細品味的論文，也是一個進入 NLP 很好的切入點。
+Transformer 整篇論文，可以用這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：
+我們可以看出 Encoder 的 output 會輸入到 Decoder，而 Decoder 會依序 output 出一個個 token，就像 Sequence to Sequence models 一樣，而進入 Decoder 後，information 會流向Decoder 的每一層 Sub-layers，而不是 Output 到 Decoder 的第一層而已。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Attention Is All You Need">
+<meta name="twitter:title" content="Attention Is All You Need">
+<meta property="og:url" content="https://wentuto.github.io/attention-is-all-you-need/">
+<meta property="twitter:url" content="https://wentuto.github.io/attention-is-all-you-need/">
+<meta property="og:site_name" content="Things always happen gradually">
+<meta property="og:description" content="Attention is all you need 是一篇 Google 在 2017 年提出的論文，主要提出了名為 transformer 的 model。在這個 model 中，使用了 attention layer，提供了 NLP 模型平行處理機制，解決 Recurrent Models 以 batch 訓練時所遇到的記憶體限制問題。也讓 NLP model 有機會考量到當句子很長時，距離不同長度的資訊，這篇論文言簡意賅，重點都有提到，也提供了詳盡的 reference，再加上網路上已經有很多參考的影片和文章，甚至有程式碼可供練習，是一篇值得細細品味的論文，也是一個進入 NLP 很好的切入點。
+Transformer 整篇論文，可以用這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：
+我們可以看出 Encoder 的 output 會輸入到 Decoder，而 Decoder 會依序 output 出一個個 token，就像 Sequence to Sequence models 一樣，而進入 Decoder 後，information 會流向Decoder 的每一層 Sub-layers，而不是 Output 到 Decoder 的第一層而已。">
+<meta name="twitter:description" content="Attention is all you need 是一篇 Google 在 2017 年提出的論文，主要提出了名為 transformer 的 model。在這個 model 中，使用了 attention layer，提供了 NLP 模型平行處理機制，解決 Recurrent Models 以 batch 訓練時所遇到的記憶體限制問題。也讓 NLP model 有機會考量到當句子很長時，距離不同長度的資訊，這篇論文言簡意賅，重點都有提到，也提供了詳盡的 reference，再加上網路上已經有很多參考的影片和文章，甚至有程式碼可供練習，是一篇值得細細品味的論文，也是一個進入 NLP 很好的切入點。
+Transformer 整篇論文，可以用這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：
+我們可以看出 Encoder 的 output 會輸入到 Decoder，而 Decoder 會依序 output 出一個個 token，就像 Sequence to Sequence models 一樣，而進入 Decoder 後，information 會流向Decoder 的每一層 Sub-layers，而不是 Output 到 Decoder 的第一層而已。">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2023-12-12T15:40:42">
+  
+  
+    <meta property="article:modified_time" content="2023-12-12T15:40:42">
+  
+  
+  
+    
+      <meta property="article:section" content="AI PAPER">
+    
+  
+  
+    
+      <meta property="article:tag" content="AI PAPER">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://wentuto.github.io/images/yoda.jpeg">
+  <meta property="twitter:image" content="https://wentuto.github.io/images/yoda.jpeg">
+
+
+
+
+
+  <meta property="og:image" content="https://wentuto.github.io/images/attention.png">
+  <meta property="twitter:image" content="https://wentuto.github.io/images/attention.png">
+
+
+    <title>Attention Is All You Need</title>
+
+    <link rel="icon" href="https://wentuto.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://wentuto.github.io/attention-is-all-you-need/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://wentuto.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://wentuto.github.io/" aria-label="Go to homepage">Things always happen gradually</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://wentuto.github.io/#about" aria-label="Open the link: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://wentuto.github.io/images/yoda.jpeg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://wentuto.github.io/#about" aria-label="Read more about the author">
+          <img class="sidebar-profile-picture" src="https://wentuto.github.io/images/yoda.jpeg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Yoda@Taipei</h4>
+        
+          <h5 class="sidebar-profile-bio">Born in Taipei. Hope to make AI products that can benefit people.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wentuto.github.io/" title="Home">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-home" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wentuto.github.io/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-bookmark" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wentuto.github.io/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-tags" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wentuto.github.io/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-archive" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wentuto.github.io/#about" title="About">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-question" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      Attention Is All You Need
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2023-12-12T15:40:42&#43;08:00">
+        
+  December 12, 2023
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://wentuto.github.io/categories/ai-paper">AI PAPER</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>Attention is all you need 是一篇 Google 在 2017 年提出的論文，主要提出了名為 transformer 的 model。在這個 model 中，使用了 attention layer，提供了 NLP 模型平行處理機制，解決 Recurrent Models 以 batch 訓練時所遇到的記憶體限制問題。也讓 NLP model 有機會考量到當句子很長時，距離不同長度的資訊，這篇論文言簡意賅，重點都有提到，也提供了詳盡的 reference，再加上網路上已經有很多參考的影片和文章，甚至有程式碼可供練習，是一篇值得細細品味的論文，也是一個進入 NLP 很好的切入點。</p>
+<h1 id="transformer">Transformer</h1>
+<p><img src="images/transformer_model.png" alt="Transformer Model"></p>
+<p>整篇論文，可以用這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：</p>
+<p><img src="images/transformer_model_n2.png" alt="Transformer Model N=2"></p>
+<p>我們可以看出 Encoder 的 output 會輸入到 Decoder，而 Decoder 會依序 output 出一個個 token，就像 Sequence to Sequence models 一樣，而進入 Decoder 後，information 會流向Decoder 的每一層 Sub-layers，而不是 Output 到 Decoder 的第一層而已。</p>
+<h1 id="tokenizer">Tokenizer</h1>
+<p>接下來，我們將從 inputs 開始，藉由資訊流動的順序逐一探討這篇論文。在 paper 裡的 5.1 中有提到 inputs 是一個一個的 token，使用的方法是 BPE (Byte-Pair Encoding)。BPE 是一種很有彈性的編碼方式，原理是將常見的字元組合合併為另一個 sub-word，稱之為 token，由它編碼的方式可以得知，最後字典允許包含越多的 token，單一的 token(sub-word) 就有機會越長；單一 token(sub-word) 越長，每一次的文字輸入就可以拆成較少的 tokens。OpenAI 有提供一個 <a href="https://platform.openai.com/tokenizer">tokenizer 的服務</a>，以 transformer 為例 (GPT-3也是用 BPE)：它會拆成 2 個 tokens，分別為 transform 加 ers 所組成。</p>
+<p><img src="images/token_service.png" alt="OpenAI token service"></p>
+<h1 id="embedding">Embedding</h1>
+<p>Embedding layer 可參考 Word2Vector (CBOW &amp; Skip-Gram) 的 models 得知它的概念，簡單來說，我們從語料庫 corpus 找到所有的 tokens 之後，便可以將輸入句子拆成許多 tokens ，再來要將 token 編碼的方式，可以由 one-hot encoded vector 表示：舉例來說，假設總共的語料庫 corpus  只有兩句話 corpus={ ‘train wonderful transformers’,’good transformers are not easy to be trained’}，那我們透過 BPE 可以將 tokens 拆成 tokens={’train’,’wonderful’,’transform’,’ers’,’good’, ’are’,’not’,’easy’,’to’,’be’,’trained’} 共 11 個 tokens。one-hot encoded vector 則將這些 token 編碼成維度為11的 vector：encoded vectors={’train’=[1,0,0,0,0,0,0,0,0,0,0], ’wonderful’=[0,1,0,0,0,0,0,0,0,0,0], ’transform’=[0,0,1,0,0,0,0,0,0,0,0], …, ’trained’=[0,0,0,0,0,0,0,0,0,0,1] }。所以每個 token 都可以編碼成維度為 11 的 one-hot vector ，也就是我們要輸入進 transformer model 的 inputs。但我們分析一下每個 vector 都是彼此正交，即使 wonderful 和 good 這兩個 token 都有「好」的意思，，但以 one-hot vector 編碼我們看不出任何關係，維度也非常高。我們需要一個 Embedding Layer 來將 one-hot vectors 做降維或是資訊濃縮的動作，假設我們由11維降成2維，我們也許就可能在2維平面上看到 wonderful 和 good 是在相近的位置。而這個 embedding layer，在 transformer model 中可以藉由訓練得到。在 transformer model 中，它參考了 <a href="https://arxiv.org/abs/1608.05859">Using the output embedding to improve language models</a>，使用 weight tying 的方法，共享了 Input Embedding, Output Embedding, 以及 pre-softmax 的權重，減少了參數量以及訓練的難度。</p>
+<h1 id="attention-layer">Attention Layer</h1>
+<p>字串拆成一排 sub-words (tokens) 後，就可以轉成一排 one-hot vectors ，經過 embedding layer，也是變成一排維度較小的 vectors。然後這一排 vectors 會輸入到 Multi-Head Attention (我們先略過 positional encoding ，因為 positional encoding 並不會改變輸入的維度或形狀)，論文中描述的multi-head圖如下：</p>
+<p><img src="images/multi_head_attention.png" alt="Multi-Head Attention"></p>
+<p>其中  Mulit-Head Attention 由 h 個 Scaled Dot-Product Attention 所組成，在 Scaled Dot-Product Attention 中，其中 Q 代表 Query，K 代表 Key，V 代表 Value。這樣看起來好像魔法一樣，就經過 Linear 層，一堆 MatMul，就得到結果，讓人猜不透為何要這樣設計，不過在<a href="https://www.youtube.com/watch?v=hYdO9CscNes&amp;list=PLJV_el3uVTsMhtt7_Y6sgTHGHp1Vb2P2J&amp;index=10">李宏毅老師的 self-attention 教學影片</a>中有很詳盡的介紹，所謂 attention layer 的好處是會考慮到每個 input vector 相互之間的關係，微觀看起來像這樣</p>
+<p><img src="images/attention_microview.png" alt="Attention microview"></p>
+<p>我們可以看出，attention layer 的 vectors 數目與上一層相同，而以輸出 b1 為例，b1 的產生參考到上一層所有的 vectors a1 ~ a4，首先 a1 會透過一層線性轉換而得到 q1，然後 q1 向量會和所有 a1~a4 vector各自經過線性轉換得到的 k1~k4 做內積相乘得到各自相關的相關純量，而兩兩先關的純量會再乘以所有 a1~a4 vector各自經過線性轉換得到v1~v4，最後相加起來得到 b1。其中詳細產生的方式可以參考李宏毅老師的教學影片，這邊做這張圖的用意是在於介紹到資訊如何產生以及 attention layer output 如何 attend 到上一層所有的 vectors，由於每一個 output 的 vector 的產生方式皆相同，所以便可以合併成矩陣的乘法，如下式：</p>
+<p><img src="images/attention_function.png" alt="Attention Function"></p>
+<p>而 Multi-Head Attention Layer 就是很多組 attention layer 平行運算，最後再 concatenate 在一起。</p>
+<h1 id="positional-encoding">Positional Encoding</h1>
+<p>看到這裡我們可能會好奇，雖然參考到所有的 Vector，但怎麼知道它們的相關位置，而且有些字放的位置不同，就會有不同的意思，這就是 Positional Encoding 存在的目的，這篇論文使用不同頻率的 sin 和 cos function 來放入 position 的 information，公式如下：</p>
+<p><img src="images/positional_func.png" alt="Positional Function"></p>
+<p>其中pos是位置的資訊，i 是 dimension ，就我看起來就是把 position information 隱藏在頻率域，所以不會增加 vectors 原本的維度，卻可以同時傳達位置的訊息，就像我們可以藏一些訊息在人聽不到的高頻聲音訊號那樣，我是這樣去理解它的概念，我想應該有論文在研究模型究竟有沒有利用到這個資訊吧 XD，而且我也同時在想，如果資訊是這樣儲存著，那model做 quantization 會影響到  model 的 performance 也不是沒有道理。</p>
+<h1 id="layer-normalization">Layer Normalization</h1>
+<p>在 data 經過 Multi-Head Attention Layer 後，會經過如下圖這一層 Add &amp; Norm：</p>
+<p><img src="images/layer_normalize.png" alt="Layer Normalization"></p>
+<p>其中 Add 就像 Residual layer 一樣，是跟上一層的 input 做相加，可以避免梯度消失的問題，而 Norm 是指 Layer Normalization，Layer Normalization 與 Batch Normalization 稍有不同，是對這一層 input 的所有 feature 做 normalize，而 Batch Normalization 是對於一個 feature 在這一個 batch 裡的所有 data 做 normalization。</p>
+<h1 id="position-wise-feed-forward-networks">Position-wise Feed-Forward Networks</h1>
+<p>再來， data 會經過 Feed-Forward network，主要就是兩層線性轉換(或是稱做 Fully Connected Layer，一樣的意思)，中間經過 ReLU，如下圖：</p>
+<p><img src="images/feed_forward_layer.png" alt="Feed-Forward Layer"></p>
+<h1 id="decoder">Decoder</h1>
+<p>介紹完 Encoder 之後，我們來看 Decoder：</p>
+<p><img src="images/decoder.png" alt="decoder"></p>
+<p>可以看到 Decoder 與 Encoder 的模型很像，但運作的方式與 Encoder 不太一樣。同樣可以參考<a href="https://www.youtube.com/watch?v=N6aRv06iv2g&amp;list=PLJV_el3uVTsMhtt7_Y6sgTHGHp1Vb2P2J&amp;index=13">李宏毅老師介紹 Decoder 的影片</a>，假設我們做的是一個英翻中的 transformer model，會需要先從下端輸入一個代表 Begin 的 token，那經過 Decoder 的 model，最後會從上端 output 一個中文的 token，得到這個 token 後，我們會把 Begin 跟這一個 token 再一起輸入到 Decoder，這樣 iterative 進行，直到最後輸出代表 End 的 token。</p>
+<p>依照上面這樣的運作方式，可能會有一個問題，就是我們在 Encoder 輸入及每層的 Vectors 的數量是一致的，但 Decoder 輸入的 Vector 數量卻是不同的，所以我們需要 mask attention layer，主要是 mask 掉未來 vectors 的 attention ，這個是與 Encoder有些不同的地方，另外中間的 attention layer 有兩個箭頭是來自 Encoder，主要是 key vectors 和 value vectors，而 query vectors 則是來自 Decoder 自己，這叫做 cross attention，讓 Decoder 能參考 Encoder的結果。</p>
+<h1 id="summary">Summary</h1>
+<p>這篇論文介紹的 attention layer， sequence to sequence， weight tying 的概念，並不是全新的概念，所以文章裡並沒有非常仔細地說明細節，要看懂這篇論文，必須要配合相關的論文一起看，才能融會貫通！我自己的習慣則是除了研究相關論文之外，再從程式碼去了解它的細節，感覺收穫很多。因為 attention layer 也已經被用在 computer vision 上，所以建議不論是學習 NLP 的人，或者是 computer vision 的人，都應該看一下這篇論文。</p>
+
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://wentuto.github.io/tags/ai-paper/">AI PAPER</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://wentuto.github.io/build-my-won-blog-with-github-pages-and-hugo/" data-tooltip="用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG" aria-label="PREVIOUS: 用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://wentuto.github.io/attention-is-all-you-need/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://wentuto.github.io/attention-is-all-you-need/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://wentuto.github.io/attention-is-all-you-need/" title="Share on Linkedin" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/wentuto.github.io\/attention-is-all-you-need\/';
+        
+          this.page.identifier = '\/attention-is-all-you-need\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'wentuto-github-io';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 Yoda@Taipei. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://wentuto.github.io/build-my-won-blog-with-github-pages-and-hugo/" data-tooltip="用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG" aria-label="PREVIOUS: 用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://wentuto.github.io/attention-is-all-you-need/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://wentuto.github.io/attention-is-all-you-need/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://wentuto.github.io/attention-is-all-you-need/" title="Share on Linkedin" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwentuto.github.io%2Fattention-is-all-you-need%2F" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fwentuto.github.io%2Fattention-is-all-you-need%2F" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwentuto.github.io%2Fattention-is-all-you-need%2F" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>Share on Linkedin</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://wentuto.github.io/images/yoda.jpeg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Yoda@Taipei</h4>
+    
+      <div id="about-card-bio">Born in Taipei. Hope to make AI products that can benefit people.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        AI Engineer &amp; Researcher
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        Taiwan
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://wentuto.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://wentuto.github.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

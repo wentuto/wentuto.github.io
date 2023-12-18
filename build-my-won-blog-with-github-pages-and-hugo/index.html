@@ -4,10 +4,15 @@
     
     <script type="application/ld+json">
 
-{  
-  "@context":"http://schema.org",
-  "@type":"Website",
-  "@id":"https:\/\/wentuto.github.io",
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "用 GITHUB PAGES + HUGO 打造我自己的BLOG",
+  
+  "image": "https://wentuto.github.io/images/blog.png",
+  
+  "datePublished": "2023-12-06T14:49:03+08:00",
+  "dateModified": "2023-12-06T14:49:03+08:00",
   "author": {
     "@type": "Person",
     "name": "Yoda@Taipei",
@@ -15,10 +20,22 @@
     "image": "https://wentuto.github.io/images/yoda.jpeg"
     
   },
-  "name":"Things always happen gradually",
-  "description":"前言（為何使用 GITHUB PAGES) 之前已經使用過 GHOST 寫自己的BLOG，它是一套非常好用的 open source blog，功能相當強大，有很好用的編輯介面與擴充功能，但也因功能強大，管理邏輯上較複雜，遇到問題要克服也較麻煩，常擔心升級失敗後，之前的心血就白費了。我自己則是在更新 HTTPS 的 SSL (Let’s Encrypt)遇到問題後，就沒有再繼續更新自己舊的 GHOST BLOG。另一個原因是使用 GHOST 會有一筆 hosting 的費用（自己 host 網站或者是購買 GHOST 的 services），當知道可以用 GITHUB PAGES 來 publish 自己的靜態網頁，就想要試試看這個免費的方式。\n評估（決定使用 HUGO 當靜態網頁生成器） 若要使用 GITHUB PAGES publish 網頁，需要先決定靜態網頁生成器的方案，它的作用是將你寫的 markdown 文章轉成網頁，你就可以將轉好的文章網頁上傳到 GITHUB PAGES 上去發表。靜態網頁生成器的方案有像 jekyll, hexo, and hugo。 比較後決定使用 HUGO，主要是『快』：因為 HUGO 是目前調查的靜態網頁系統中生成速度最快的，可以節省不少生成的時間。而 HUGO \u002b GITHUB PAGES 這樣的方式比起之前 GHOST 的方案來說相依的模組較少，執行起來相對『簡單』很多，想說等之後真的越寫越多，再搬到 GHOST 也不是不可以 XD。\n安裝 首先是在電腦上安裝 HUGO 這個用 Go 編寫的靜態網站生成器，由於我用的電腦是 MACBOOK，所以使用下面 command",
-  "url":"https:\/\/wentuto.github.io\/blog\/build-my-own-blog-2023\/",
-  "keywords":"[]"
+  "mainEntityOfPage": { 
+    "@type": "WebPage",
+    "@id": "https:\/\/wentuto.github.io\/build-my-won-blog-with-github-pages-and-hugo\/" 
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Things always happen gradually",
+    
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://wentuto.github.io/images/yoda.jpeg"
+    }
+    
+  },
+  "description": "前言（為何使用 GITHUB PAGES) 之前已經使用過 GHOST 寫自己的BLOG，它是一套非常好用的 open source blog，功能相當強大，有很好用的編輯介面與擴充功能，但也因功能強大，管理邏輯上較複雜，遇到問題要克服也較麻煩，常擔心升級失敗後，之前的心血就白費了。我自己則是在更新 HTTPS 的 SSL (Let’s Encrypt)遇到問題後，就沒有再繼續更新自己舊的 GHOST BLOG。另一個原因是使用 GHOST 會有一筆 hosting 的費用（自己 host 網站或者是購買 GHOST 的 services），當知道可以用 GITHUB PAGES 來 publish 自己的靜態網頁，就想要試試看這個免費的方式。\n評估（決定使用 HUGO 當靜態網頁生成器） 若要使用 GITHUB PAGES publish 網頁，需要先決定靜態網頁生成器的方案，它的作用是將你寫的 markdown 文章轉成網頁，你就可以將轉好的文章網頁上傳到 GITHUB PAGES 上去發表。靜態網頁生成器的方案有像 jekyll, hexo, and hugo。 比較後決定使用 HUGO，主要是『快』：因為 HUGO 是目前調查的靜態網頁系統中生成速度最快的，可以節省不少生成的時間。而 HUGO + GITHUB PAGES 這樣的方式比起之前 GHOST 的方案來說相依的模組較少，執行起來相對『簡單』很多，想說等之後真的越寫越多，再搬到 GHOST 也不是不可以 XD。\n安裝 首先是在電腦上安裝 HUGO 這個用 Go 編寫的靜態網站生成器，由於我用的電腦是 MACBOOK，所以使用下面 command",
+  "keywords": []
 }
 
 </script>
@@ -39,8 +56,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG">
 <meta name="twitter:title" content="用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG">
-<meta property="og:url" content="https://wentuto.github.io/blog/build-my-own-blog-2023/">
-<meta property="twitter:url" content="https://wentuto.github.io/blog/build-my-own-blog-2023/">
+<meta property="og:url" content="https://wentuto.github.io/build-my-won-blog-with-github-pages-and-hugo/">
+<meta property="twitter:url" content="https://wentuto.github.io/build-my-won-blog-with-github-pages-and-hugo/">
 <meta property="og:site_name" content="Things always happen gradually">
 <meta property="og:description" content="前言（為何使用 GITHUB PAGES) 之前已經使用過 GHOST 寫自己的BLOG，它是一套非常好用的 open source blog，功能相當強大，有很好用的編輯介面與擴充功能，但也因功能強大，管理邏輯上較複雜，遇到問題要克服也較麻煩，常擔心升級失敗後，之前的心血就白費了。我自己則是在更新 HTTPS 的 SSL (Let’s Encrypt)遇到問題後，就沒有再繼續更新自己舊的 GHOST BLOG。另一個原因是使用 GHOST 會有一筆 hosting 的費用（自己 host 網站或者是購買 GHOST 的 services），當知道可以用 GITHUB PAGES 來 publish 自己的靜態網頁，就想要試試看這個免費的方式。
 評估（決定使用 HUGO 當靜態網頁生成器） 若要使用 GITHUB PAGES publish 網頁，需要先決定靜態網頁生成器的方案，它的作用是將你寫的 markdown 文章轉成網頁，你就可以將轉好的文章網頁上傳到 GITHUB PAGES 上去發表。靜態網頁生成器的方案有像 jekyll, hexo, and hugo。 比較後決定使用 HUGO，主要是『快』：因為 HUGO 是目前調查的靜態網頁系統中生成速度最快的，可以節省不少生成的時間。而 HUGO &#43; GITHUB PAGES 這樣的方式比起之前 GHOST 的方案來說相依的模組較少，執行起來相對『簡單』很多，想說等之後真的越寫越多，再搬到 GHOST 也不是不可以 XD。
@@ -51,10 +68,10 @@
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2023-10-06T14:49:03">
+    <meta property="article:published_time" content="2023-12-06T14:49:03">
   
   
-    <meta property="article:modified_time" content="2023-10-06T14:49:03">
+    <meta property="article:modified_time" content="2023-12-06T14:49:03">
   
   
   
@@ -84,8 +101,8 @@
 
 
 
-  <meta property="og:image" content="https://wentuto.github.io/blog/build-my-own-blog-2023/images/blog.jpg">
-  <meta property="twitter:image" content="https://wentuto.github.io/blog/build-my-own-blog-2023/images/blog.jpg">
+  <meta property="og:image" content="https://wentuto.github.io/images/blog.png">
+  <meta property="twitter:image" content="https://wentuto.github.io/images/blog.png">
 
 
     <title>用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG</title>
@@ -95,7 +112,7 @@
 
     
 
-    <link rel="canonical" href="https://wentuto.github.io/blog/build-my-own-blog-2023/">
+    <link rel="canonical" href="https://wentuto.github.io/build-my-won-blog-with-github-pages-and-hugo/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -144,7 +161,7 @@
         </a>
         <h4 class="sidebar-profile-name">Yoda@Taipei</h4>
         
-          <h5 class="sidebar-profile-bio">Born in Taipei. Hope to make AI robots that can take care of people.</h5>
+          <h5 class="sidebar-profile-bio">Born in Taipei. Hope to make AI products that can benefit people.</h5>
         
       </div>
     
@@ -231,9 +248,9 @@
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2023-10-06T14:49:03&#43;08:00">
+      <time datetime="2023-12-06T14:49:03&#43;08:00">
         
-  October 6, 2023
+  December 6, 2023
 
       </time>
     
@@ -485,7 +502,7 @@ draft = true
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://wentuto.github.io/attention-is-all-you-need/" data-tooltip="Attention Is All You Need" aria-label="NEXT: Attention Is All You Need">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -511,19 +528,19 @@ draft = true
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://wentuto.github.io/blog/build-my-own-blog-2023/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://wentuto.github.io/build-my-won-blog-with-github-pages-and-hugo/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://wentuto.github.io/blog/build-my-own-blog-2023/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://wentuto.github.io/build-my-won-blog-with-github-pages-and-hugo/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://wentuto.github.io/blog/build-my-own-blog-2023/" title="Share on Linkedin" aria-label="Share on Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://wentuto.github.io/build-my-won-blog-with-github-pages-and-hugo/" title="Share on Linkedin" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -554,9 +571,9 @@ draft = true
     </div>
     <script type="text/javascript">
       var disqus_config = function() {
-        this.page.url = 'https:\/\/wentuto.github.io\/blog\/build-my-own-blog-2023\/';
+        this.page.url = 'https:\/\/wentuto.github.io\/build-my-won-blog-with-github-pages-and-hugo\/';
         
-          this.page.identifier = '\/blog\/build-my-own-blog-2023\/'
+          this.page.identifier = '\/build-my-won-blog-with-github-pages-and-hugo\/'
         
       };
       (function() {
@@ -592,7 +609,7 @@ draft = true
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://wentuto.github.io/attention-is-all-you-need/" data-tooltip="Attention Is All You Need" aria-label="NEXT: Attention Is All You Need">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -618,19 +635,19 @@ draft = true
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://wentuto.github.io/blog/build-my-own-blog-2023/" title="Share on Facebook" aria-label="Share on Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://wentuto.github.io/build-my-won-blog-with-github-pages-and-hugo/" title="Share on Facebook" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://wentuto.github.io/blog/build-my-own-blog-2023/" title="Share on Twitter" aria-label="Share on Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://wentuto.github.io/build-my-won-blog-with-github-pages-and-hugo/" title="Share on Twitter" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://wentuto.github.io/blog/build-my-own-blog-2023/" title="Share on Linkedin" aria-label="Share on Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://wentuto.github.io/build-my-won-blog-with-github-pages-and-hugo/" title="Share on Linkedin" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -661,19 +678,19 @@ draft = true
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwentuto.github.io%2Fblog%2Fbuild-my-own-blog-2023%2F" aria-label="Share on Facebook">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwentuto.github.io%2Fbuild-my-won-blog-with-github-pages-and-hugo%2F" aria-label="Share on Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fwentuto.github.io%2Fblog%2Fbuild-my-own-blog-2023%2F" aria-label="Share on Twitter">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fwentuto.github.io%2Fbuild-my-won-blog-with-github-pages-and-hugo%2F" aria-label="Share on Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwentuto.github.io%2Fblog%2Fbuild-my-own-blog-2023%2F" aria-label="Share on Linkedin">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwentuto.github.io%2Fbuild-my-won-blog-with-github-pages-and-hugo%2F" aria-label="Share on Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i><span>Share on Linkedin</span>
         </a>
       </li>
@@ -695,13 +712,13 @@ draft = true
     
     <h4 id="about-card-name">Yoda@Taipei</h4>
     
-      <div id="about-card-bio">Born in Taipei. Hope to make AI robots that can take care of people.</div>
+      <div id="about-card-bio">Born in Taipei. Hope to make AI products that can benefit people.</div>
     
     
       <div id="about-card-job">
         <i class="fa fa-briefcase"></i>
         <br/>
-        AI Programmer &amp; Researcher
+        AI Engineer &amp; Researcher
       </div>
     
     

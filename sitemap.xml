@@ -2,26 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://wentuto.github.io/tags/blog/</loc>
-    <lastmod>2023-10-06T14:49:03+08:00</lastmod>
+    <loc>https://wentuto.github.io/tags/ai-paper/</loc>
+    <lastmod>2023-12-12T15:40:42+08:00</lastmod>
   </url><url>
-    <loc>https://wentuto.github.io/categories/blog/</loc>
-    <lastmod>2023-10-06T14:49:03+08:00</lastmod>
+    <loc>https://wentuto.github.io/categories/ai-paper/</loc>
+    <lastmod>2023-12-12T15:40:42+08:00</lastmod>
   </url><url>
-    <loc>https://wentuto.github.io/blog/</loc>
-    <lastmod>2023-10-06T14:49:03+08:00</lastmod>
+    <loc>https://wentuto.github.io/attention-is-all-you-need/</loc>
+    <lastmod>2023-12-12T15:40:42+08:00</lastmod>
   </url><url>
     <loc>https://wentuto.github.io/categories/</loc>
-    <lastmod>2023-10-06T14:49:03+08:00</lastmod>
+    <lastmod>2023-12-12T15:40:42+08:00</lastmod>
+  </url><url>
+    <loc>https://wentuto.github.io/posts/</loc>
+    <lastmod>2023-12-12T15:40:42+08:00</lastmod>
   </url><url>
     <loc>https://wentuto.github.io/tags/</loc>
-    <lastmod>2023-10-06T14:49:03+08:00</lastmod>
+    <lastmod>2023-12-12T15:40:42+08:00</lastmod>
   </url><url>
     <loc>https://wentuto.github.io/</loc>
-    <lastmod>2023-10-06T14:49:03+08:00</lastmod>
+    <lastmod>2023-12-12T15:40:42+08:00</lastmod>
   </url><url>
-    <loc>https://wentuto.github.io/blog/build-my-own-blog-2023/</loc>
-    <lastmod>2023-10-06T14:49:03+08:00</lastmod>
+    <loc>https://wentuto.github.io/tags/blog/</loc>
+    <lastmod>2023-12-06T14:49:03+08:00</lastmod>
+  </url><url>
+    <loc>https://wentuto.github.io/categories/blog/</loc>
+    <lastmod>2023-12-06T14:49:03+08:00</lastmod>
+  </url><url>
+    <loc>https://wentuto.github.io/build-my-won-blog-with-github-pages-and-hugo/</loc>
+    <lastmod>2023-12-06T14:49:03+08:00</lastmod>
   </url><url>
     <loc>https://wentuto.github.io/archives/</loc>
   </url>

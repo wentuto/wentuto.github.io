@@ -117,7 +117,7 @@
         </a>
         <h4 class="sidebar-profile-name">Yoda@Taipei</h4>
         
-          <h5 class="sidebar-profile-bio">Born in Taipei. Hope to make AI robots that can take care of people.</h5>
+          <h5 class="sidebar-profile-bio">Born in Taipei. Hope to make AI products that can benefit people.</h5>
         
       </div>
     
@@ -209,7 +209,71 @@
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
-        <a class="link-unstyled" href="https://wentuto.github.io/blog/build-my-own-blog-2023/" aria-label="Open the post: 用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG">
+        <a class="link-unstyled" href="https://wentuto.github.io/attention-is-all-you-need/" aria-label="Open the post: Attention Is All You Need">
+      
+          Attention Is All You Need
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2023-12-12T15:40:42&#43;08:00">
+        
+  December 12, 2023
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://wentuto.github.io/categories/ai-paper">AI PAPER</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        Attention is all you need 是一篇 Google 在 2017 年提出的論文，主要提出了名為 transformer 的 model。在這個 model 中，使用了 attention layer，提供了 NLP 模型平行處理機制，解決 Recurrent Models 以 batch 訓練時所遇到的記憶體限制問題。也讓 NLP model 有機會考量到當句子很長時，距離不同長度的資訊，這篇論文言簡意賅，重點都有提到，也提供了詳盡的 reference，再加上網路上已經有很多參考的影片和文章，甚至有程式碼可供練習，是一篇值得細細品味的論文，也是一個進入 NLP 很好的切入點。
+Transformer 整篇論文，可以用這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：
+我們可以看出 Encoder 的 output 會輸入到 Decoder，而 Decoder 會依序 output 出一個個 token，就像 Sequence to Sequence models 一樣，而進入 Decoder 後，information 會流向Decoder 的每一層 Sub-layers，而不是 Output 到 Decoder 的第一層而已。
+      
+      <p>
+        
+          <a href="https://wentuto.github.io/attention-is-all-you-need/" class="postShorten-excerpt_link link" aria-label="Open the post: Attention Is All You Need">Continue reading</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+    <a href="https://wentuto.github.io/attention-is-all-you-need/" aria-label="Open the post: Attention Is All You Need">
+      <div class="postShorten-thumbnailimg">
+        <img alt="" src="https://wentuto.github.io/images/attention.png"/>
+      </div>
+    </a>
+  
+</article>
+
+          
+            
+  
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-left">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="https://wentuto.github.io/build-my-won-blog-with-github-pages-and-hugo/" aria-label="Open the post: 用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG">
       
           用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG
         </a>
@@ -217,9 +281,9 @@
       
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2023-10-06T14:49:03&#43;08:00">
+      <time datetime="2023-12-06T14:49:03&#43;08:00">
         
-  October 6, 2023
+  December 6, 2023
 
       </time>
     
@@ -243,16 +307,16 @@
       
       <p>
         
-          <a href="https://wentuto.github.io/blog/build-my-own-blog-2023/" class="postShorten-excerpt_link link" aria-label="Open the post: 用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG">Continue reading</a>
+          <a href="https://wentuto.github.io/build-my-won-blog-with-github-pages-and-hugo/" class="postShorten-excerpt_link link" aria-label="Open the post: 用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG">Continue reading</a>
         
         
       </p>
     </div>
   </div>
   
-    <a href="https://wentuto.github.io/blog/build-my-own-blog-2023/" aria-label="Open the post: 用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG">
+    <a href="https://wentuto.github.io/build-my-won-blog-with-github-pages-and-hugo/" aria-label="Open the post: 用 GITHUB PAGES &#43; HUGO 打造我自己的BLOG">
       <div class="postShorten-thumbnailimg">
-        <img alt="" src="https://wentuto.github.io/blog/build-my-own-blog-2023/images/blog.jpg"/>
+        <img alt="" src="https://wentuto.github.io/images/blog.png"/>
       </div>
     </a>
   
@@ -281,13 +345,13 @@
     
     <h4 id="about-card-name">Yoda@Taipei</h4>
     
-      <div id="about-card-bio">Born in Taipei. Hope to make AI robots that can take care of people.</div>
+      <div id="about-card-bio">Born in Taipei. Hope to make AI products that can benefit people.</div>
     
     
       <div id="about-card-job">
         <i class="fa fa-briefcase"></i>
         <br/>
-        AI Programmer &amp; Researcher
+        AI Engineer &amp; Researcher
       </div>
     
     
