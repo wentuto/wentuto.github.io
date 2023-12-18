@@ -61,7 +61,7 @@
 
     <title>AI PAPER</title>
 
-    <link rel="icon" href="https://wentuto.github.io/favicon.png">
+    <link rel="icon" href="https://wentuto.github.io/images/favicon_t1.png">
     
       <link rel="alternate" type="application/rss+xml" title="RSS" href="https://wentuto.github.io/categories/ai-paper/index.xml">
     
@@ -241,7 +241,7 @@
     <div class="postShorten-excerpt">
       
         Attention is all you need 是一篇 Google 在 2017 年提出的論文，主要提出了名為 transformer 的 model。在這個 model 中，使用了 attention layer，提供了 NLP 模型平行處理機制，解決 Recurrent Models 以 batch 訓練時所遇到的記憶體限制問題。也讓 NLP model 有機會考量到當句子很長時，距離不同長度的資訊，這篇論文言簡意賅，重點都有提到，也提供了詳盡的 reference，再加上網路上已經有很多參考的影片和文章，甚至有程式碼可供練習，是一篇值得細細品味的論文，也是一個進入 NLP 很好的切入點。
-Transformer 整篇論文，可以用這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：
+Transformer 整篇論文，可以用論文中的這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：
 我們可以看出 Encoder 的 output 會輸入到 Decoder，而 Decoder 會依序 output 出一個個 token，就像 Sequence to Sequence models 一樣，而進入 Decoder 後，information 會流向Decoder 的每一層 Sub-layers，而不是 Output 到 Decoder 的第一層而已。
       
       <p>

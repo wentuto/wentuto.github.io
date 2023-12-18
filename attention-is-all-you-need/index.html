@@ -34,7 +34,7 @@
     }
     
   },
-  "description": "Attention is all you need 是一篇 Google 在 2017 年提出的論文，主要提出了名為 transformer 的 model。在這個 model 中，使用了 attention layer，提供了 NLP 模型平行處理機制，解決 Recurrent Models 以 batch 訓練時所遇到的記憶體限制問題。也讓 NLP model 有機會考量到當句子很長時，距離不同長度的資訊，這篇論文言簡意賅，重點都有提到，也提供了詳盡的 reference，再加上網路上已經有很多參考的影片和文章，甚至有程式碼可供練習，是一篇值得細細品味的論文，也是一個進入 NLP 很好的切入點。\nTransformer 整篇論文，可以用這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：\n我們可以看出 Encoder 的 output 會輸入到 Decoder，而 Decoder 會依序 output 出一個個 token，就像 Sequence to Sequence models 一樣，而進入 Decoder 後，information 會流向Decoder 的每一層 Sub-layers，而不是 Output 到 Decoder 的第一層而已。",
+  "description": "Attention is all you need 是一篇 Google 在 2017 年提出的論文，主要提出了名為 transformer 的 model。在這個 model 中，使用了 attention layer，提供了 NLP 模型平行處理機制，解決 Recurrent Models 以 batch 訓練時所遇到的記憶體限制問題。也讓 NLP model 有機會考量到當句子很長時，距離不同長度的資訊，這篇論文言簡意賅，重點都有提到，也提供了詳盡的 reference，再加上網路上已經有很多參考的影片和文章，甚至有程式碼可供練習，是一篇值得細細品味的論文，也是一個進入 NLP 很好的切入點。\nTransformer 整篇論文，可以用論文中的這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：\n我們可以看出 Encoder 的 output 會輸入到 Decoder，而 Decoder 會依序 output 出一個個 token，就像 Sequence to Sequence models 一樣，而進入 Decoder 後，information 會流向Decoder 的每一層 Sub-layers，而不是 Output 到 Decoder 的第一層而已。",
   "keywords": []
 }
 
@@ -46,12 +46,12 @@
 <meta name="author" content="Yoda@Taipei">
 <meta name="keywords" content="">
 <meta name="description" content="Attention is all you need 是一篇 Google 在 2017 年提出的論文，主要提出了名為 transformer 的 model。在這個 model 中，使用了 attention layer，提供了 NLP 模型平行處理機制，解決 Recurrent Models 以 batch 訓練時所遇到的記憶體限制問題。也讓 NLP model 有機會考量到當句子很長時，距離不同長度的資訊，這篇論文言簡意賅，重點都有提到，也提供了詳盡的 reference，再加上網路上已經有很多參考的影片和文章，甚至有程式碼可供練習，是一篇值得細細品味的論文，也是一個進入 NLP 很好的切入點。
-Transformer 整篇論文，可以用這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：
+Transformer 整篇論文，可以用論文中的這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：
 我們可以看出 Encoder 的 output 會輸入到 Decoder，而 Decoder 會依序 output 出一個個 token，就像 Sequence to Sequence models 一樣，而進入 Decoder 後，information 會流向Decoder 的每一層 Sub-layers，而不是 Output 到 Decoder 的第一層而已。">
 
 
 <meta property="og:description" content="Attention is all you need 是一篇 Google 在 2017 年提出的論文，主要提出了名為 transformer 的 model。在這個 model 中，使用了 attention layer，提供了 NLP 模型平行處理機制，解決 Recurrent Models 以 batch 訓練時所遇到的記憶體限制問題。也讓 NLP model 有機會考量到當句子很長時，距離不同長度的資訊，這篇論文言簡意賅，重點都有提到，也提供了詳盡的 reference，再加上網路上已經有很多參考的影片和文章，甚至有程式碼可供練習，是一篇值得細細品味的論文，也是一個進入 NLP 很好的切入點。
-Transformer 整篇論文，可以用這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：
+Transformer 整篇論文，可以用論文中的這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：
 我們可以看出 Encoder 的 output 會輸入到 Decoder，而 Decoder 會依序 output 出一個個 token，就像 Sequence to Sequence models 一樣，而進入 Decoder 後，information 會流向Decoder 的每一層 Sub-layers，而不是 Output 到 Decoder 的第一層而已。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Attention Is All You Need">
@@ -60,10 +60,10 @@ Transformer 整篇論文，可以用這張圖說完。但每一個小部分都�
 <meta property="twitter:url" content="https://wentuto.github.io/attention-is-all-you-need/">
 <meta property="og:site_name" content="Things always happen gradually">
 <meta property="og:description" content="Attention is all you need 是一篇 Google 在 2017 年提出的論文，主要提出了名為 transformer 的 model。在這個 model 中，使用了 attention layer，提供了 NLP 模型平行處理機制，解決 Recurrent Models 以 batch 訓練時所遇到的記憶體限制問題。也讓 NLP model 有機會考量到當句子很長時，距離不同長度的資訊，這篇論文言簡意賅，重點都有提到，也提供了詳盡的 reference，再加上網路上已經有很多參考的影片和文章，甚至有程式碼可供練習，是一篇值得細細品味的論文，也是一個進入 NLP 很好的切入點。
-Transformer 整篇論文，可以用這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：
+Transformer 整篇論文，可以用論文中的這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：
 我們可以看出 Encoder 的 output 會輸入到 Decoder，而 Decoder 會依序 output 出一個個 token，就像 Sequence to Sequence models 一樣，而進入 Decoder 後，information 會流向Decoder 的每一層 Sub-layers，而不是 Output 到 Decoder 的第一層而已。">
 <meta name="twitter:description" content="Attention is all you need 是一篇 Google 在 2017 年提出的論文，主要提出了名為 transformer 的 model。在這個 model 中，使用了 attention layer，提供了 NLP 模型平行處理機制，解決 Recurrent Models 以 batch 訓練時所遇到的記憶體限制問題。也讓 NLP model 有機會考量到當句子很長時，距離不同長度的資訊，這篇論文言簡意賅，重點都有提到，也提供了詳盡的 reference，再加上網路上已經有很多參考的影片和文章，甚至有程式碼可供練習，是一篇值得細細品味的論文，也是一個進入 NLP 很好的切入點。
-Transformer 整篇論文，可以用這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：
+Transformer 整篇論文，可以用論文中的這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：
 我們可以看出 Encoder 的 output 會輸入到 Decoder，而 Decoder 會依序 output 出一個個 token，就像 Sequence to Sequence models 一樣，而進入 Decoder 後，information 會流向Decoder 的每一層 Sub-layers，而不是 Output 到 Decoder 的第一層而已。">
 <meta property="og:locale" content="en-us">
 
@@ -107,7 +107,7 @@ Transformer 整篇論文，可以用這張圖說完。但每一個小部分都�
 
     <title>Attention Is All You Need</title>
 
-    <link rel="icon" href="https://wentuto.github.io/favicon.png">
+    <link rel="icon" href="https://wentuto.github.io/images/favicon_t1.png">
     
 
     
@@ -272,11 +272,11 @@ Transformer 整篇論文，可以用這張圖說完。但每一個小部分都�
               <p>Attention is all you need 是一篇 Google 在 2017 年提出的論文，主要提出了名為 transformer 的 model。在這個 model 中，使用了 attention layer，提供了 NLP 模型平行處理機制，解決 Recurrent Models 以 batch 訓練時所遇到的記憶體限制問題。也讓 NLP model 有機會考量到當句子很長時，距離不同長度的資訊，這篇論文言簡意賅，重點都有提到，也提供了詳盡的 reference，再加上網路上已經有很多參考的影片和文章，甚至有程式碼可供練習，是一篇值得細細品味的論文，也是一個進入 NLP 很好的切入點。</p>
 <h1 id="transformer">Transformer</h1>
 <p><img src="images/transformer_model.png" alt="Transformer Model"></p>
-<p>整篇論文，可以用這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：</p>
+<p>整篇論文，可以用論文中的這張圖說完。但每一個小部分都可以細細地去研究，去了解它的資訊如何流動。首先它是一個 Sequence to Sequence model：整體來看，可以分為左邊的 Encoder 和右邊的 Decoder 部分， 而這個 model 有 N 層，default N=6，也就是左邊有 6 層，右邊也有 6 層，假設 N=2 的話，則如下圖：</p>
 <p><img src="images/transformer_model_n2.png" alt="Transformer Model N=2"></p>
 <p>我們可以看出 Encoder 的 output 會輸入到 Decoder，而 Decoder 會依序 output 出一個個 token，就像 Sequence to Sequence models 一樣，而進入 Decoder 後，information 會流向Decoder 的每一層 Sub-layers，而不是 Output 到 Decoder 的第一層而已。</p>
 <h1 id="tokenizer">Tokenizer</h1>
-<p>接下來，我們將從 inputs 開始，藉由資訊流動的順序逐一探討這篇論文。在 paper 裡的 5.1 中有提到 inputs 是一個一個的 token，使用的方法是 BPE (Byte-Pair Encoding)。BPE 是一種很有彈性的編碼方式，原理是將常見的字元組合合併為另一個 sub-word，稱之為 token，由它編碼的方式可以得知，最後字典允許包含越多的 token，單一的 token(sub-word) 就有機會越長；單一 token(sub-word) 越長，每一次的文字輸入就可以拆成較少的 tokens。OpenAI 有提供一個 <a href="https://platform.openai.com/tokenizer">tokenizer 的服務</a>，以 transformer 為例 (GPT-3也是用 BPE)：它會拆成 2 個 tokens，分別為 transform 加 ers 所組成。</p>
+<p>接下來，我們將從 inputs 開始，藉由資訊流動的順序逐一探討這篇論文。在 paper 裡的 5.1 中有提到 inputs 是一個一個的 token，使用的方法是 BPE (Byte-Pair Encoding)。BPE 是一種很有彈性的編碼方式，原理是將常見的字元組合合併為另一個 sub-word，稱之為 token，由它編碼的方式可以得知，最後字典允許包含越多的 token，單一的 token(sub-word) 就有機會越長；單一 token(sub-word) 越長，每一次的文字輸入就可以拆成較少的 tokens。OpenAI 有提供一個 <a href="https://platform.openai.com/tokenizer">tokenizer 的服務</a>，以 transformers 這個 word 為例 (GPT-3也是用 BPE)：它會拆成 2 個 tokens，分別為 transform 加 ers 所組成。</p>
 <p><img src="images/token_service.png" alt="OpenAI token service"></p>
 <h1 id="embedding">Embedding</h1>
 <p>Embedding layer 可參考 Word2Vector (CBOW &amp; Skip-Gram) 的 models 得知它的概念，簡單來說，我們從語料庫 corpus 找到所有的 tokens 之後，便可以將輸入句子拆成許多 tokens ，再來要將 token 編碼的方式，可以由 one-hot encoded vector 表示：舉例來說，假設總共的語料庫 corpus  只有兩句話 corpus={ ‘train wonderful transformers’,’good transformers are not easy to be trained’}，那我們透過 BPE 可以將 tokens 拆成 tokens={’train’,’wonderful’,’transform’,’ers’,’good’, ’are’,’not’,’easy’,’to’,’be’,’trained’} 共 11 個 tokens。one-hot encoded vector 則將這些 token 編碼成維度為11的 vector：encoded vectors={’train’=[1,0,0,0,0,0,0,0,0,0,0], ’wonderful’=[0,1,0,0,0,0,0,0,0,0,0], ’transform’=[0,0,1,0,0,0,0,0,0,0,0], …, ’trained’=[0,0,0,0,0,0,0,0,0,0,1] }。所以每個 token 都可以編碼成維度為 11 的 one-hot vector ，也就是我們要輸入進 transformer model 的 inputs。但我們分析一下每個 vector 都是彼此正交，即使 wonderful 和 good 這兩個 token 都有「好」的意思，，但以 one-hot vector 編碼我們看不出任何關係，維度也非常高。我們需要一個 Embedding Layer 來將 one-hot vectors 做降維或是資訊濃縮的動作，假設我們由11維降成2維，我們也許就可能在2維平面上看到 wonderful 和 good 是在相近的位置。而這個 embedding layer，在 transformer model 中可以藉由訓練得到。在 transformer model 中，它參考了 <a href="https://arxiv.org/abs/1608.05859">Using the output embedding to improve language models</a>，使用 weight tying 的方法，共享了 Input Embedding, Output Embedding, 以及 pre-softmax 的權重，減少了參數量以及訓練的難度。</p>
