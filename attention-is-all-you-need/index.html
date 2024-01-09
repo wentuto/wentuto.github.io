@@ -291,7 +291,8 @@ Transformer 整篇論文，可以用論文中的這張圖說完。但每一個�
 <h1 id="positional-encoding">Positional Encoding</h1>
 <p>看到這裡我們可能會好奇，雖然參考到所有的 Vector，但怎麼知道它們的相關位置，而且有些字放的位置不同，就會有不同的意思，這就是 Positional Encoding 存在的目的，這篇論文使用不同頻率的 sin 和 cos function 來放入 position 的 information，公式如下：</p>
 <p><img src="images/positional_func.png" alt="Positional Function"></p>
-<p>其中pos是位置的資訊，i 指向量中第幾維，若 i 為偶數用 sin 函數，若 i 為奇數用 cos 函數 ，就我直覺看起來就是把 position information 隱藏在頻率域，所以不會增加 vectors 原本的維度，卻可以同時傳達位置的訊息，就像我們可以藏一些訊息在人聽不到的高頻聲音訊號那樣，我是這樣去簡單理解它的概念，有一篇 <a href="https://kazemnejad.com/blog/transformer_architecture_positional_encoding/">Transformer Architecture: The Positional Encoding</a> 寫的很棒，寫到這樣的方式可以在不同維度用不同角速度 encode position ，概念上有點像用二進位的不同次方去 encode 那樣。我同時在想，如果是這樣的話，model做 quantization 會影響到  model 的 performance 應該是很有可能的事 …。一方面雖一直覺得這樣的 encoding 方式很不直覺，把 position 的資訊分成 sin 和 cos 函數藏在不同維度裡，那模型還得參考不同維度的資訊才可以還原出 position 的資訊，但另一方面我也一時想不到更好的方法。我想光研究這個，就應該是個蠻有趣的題目ＸＤ。</p>
+<p>其中pos是位置的資訊，i 指向量中第幾維，若 i 為偶數用 sin 函數，若 i 為奇數用 cos 函數 ，就我直覺看起來就是把 position information 隱藏在頻率域，所以不會增加 vectors 原本的維度，卻可以同時傳達位置的訊息，就像我們可以藏一些訊息在人聽不到的高頻聲音訊號那樣，我是這樣去簡單理解它的概念，有一篇 <a href="https://kazemnejad.com/blog/transformer_architecture_positional_encoding/">Transformer Architecture: The Positional Encoding</a> 寫的很棒，寫到這樣的方式可以在不同維度用不同角速度 encode position ，概念上有點像用二進位的不同次方去 encode 那樣。我同時在想，如果是這樣的話，model做 quantization 會影響到  model 的 performance 應該是很有可能的事 …。一方面雖一直覺得這樣的 encoding 方式很不直覺，把 position 的資訊分成 sin 和 cos 函數藏在不同維度裡，那模型還得參考不同維度的資訊才可以還原出 position 的資訊，但另一方面我也一時想不到更好的方法。我想光研究這個，就應該是個蠻有趣的題目ＸＤ。最後我們畫出 position encoding 的圖，大家可以比較一下每個位置上不同維度的值來感受一下：</p>
+<p><img src="images/position_encoding_diag.png" alt="Diagram of Position Encoding"></p>
 <h1 id="layer-normalization">Layer Normalization</h1>
 <p>在 data 經過 Multi-Head Attention Layer 後，會經過如下圖這一層 Add &amp; Norm：</p>
 <p><img src="images/layer_normalize.png" alt="Layer Normalization"></p>
